@@ -1,0 +1,21 @@
+body {
+    background-color: rgb(249, 249, 249);
+    margin: 0px;
+    padding-left: 0px;
+    padding-bottom: 300px;
+    font-family: 'Roboto', sans-serif;
+}
+
+input {
+    outline:none;
+}
+
+img {
+    cursor: pointer;
+}
+
+p {
+    font-family: Roboto, sans-serif;
+    margin-top: 0;
+    margin-bottom: 0;
+}

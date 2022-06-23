@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube</title>
+    <link href="icons/youtube.svg" rel="icon" type="image/x-ico">
+    <link rel="stylesheet" href="styles/general.css" /> 
+    <link rel="stylesheet" href="styles/navigator.css" /> 
+    <link rel="stylesheet" href="styles/sidebar.css" /> 
+    <link rel="stylesheet" href="styles/content.css" /> 
+    <link rel="stylesheet" href="styles/category.css" /> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="navigator">
+        <div class="section-left">
+            <img class="menu" src="icons/menu.svg">
+            <img class="logo" src="images/logo.jpg">
+        </div>
+        <div class="section-middle">
+            <input class="search-box" type="search" placeholder="搜索">
+            <div class="hint-bind">
+                <button class="search-button">
+                    <img src="icons/search.svg">
+                </button>
+                <div class="button-hint">搜索</div>
+            </div>
+            <div class="hint-bind">
+                <button class="voice-search-button">
+                    <img src="icons/voice.svg">
+                </button>
+                <div class="button-hint">通過語音搜索内容</div>
+            </div>
+        </div>
+        <div class="section-right">
+            <div class="hint-bind">
+                <img src="icons/video-add.svg">
+                <div class="button-hint">創建</div>
+            </div>
+            <div class="hint-bind">
+                <img src="icons/application.svg">
+                <div class="button-hint">YouTube應用</div>
+            </div>
+            <div class="hint-bind">
+                <img src="icons/notification.svg">
+                <div class="button-hint">通知</div>
+                <div class="notification">3</div>
+            </div>
+            <img id="avatar" src="images/avatar.png">
+        </div>
+    </div>
+
+    <div class="sidebar">
+        <div class="sidebar-element">
+            <img src="icons/home.svg" alt="">
+            <p>首頁</p>
+        </div>
+        <div class="sidebar-element">
+            <img src="icons/explore.svg" alt="">
+            <p>探索</p>
+        </div>
+        <div class="sidebar-element">
+            <img src="icons/shorts.svg" alt="">
+            <p>Shorts</p>
+        </div>
+        <div class="sidebar-element">
+            <img src="icons/subscriptions.svg" alt="">
+            <p>訂閲内容</p>
+        </div>
+        <div class="sidebar-element">
+            <img src="icons/media.svg" alt="">
+            <p>媒體庫</p>
+        </div>
+        <div class="sidebar-element">
+            <img src="icons/history.svg" alt="">
+            <p>歷史記錄</p>
+        </div>
+    </div>
+
+    <div class="categories">
+        <button class="current-category">全部</button>
+        <button class="category-button">游戲</button>
+        <button class="category-button">音樂</button>
+        <button class="category-button">ASMR</button>
+        <button class="category-button">説唱</button>
+        <button class="category-button">數學</button>
+        <button class="category-button">最近上傳的内容</button>
+        <button class="category-button">令您耳目一新的視頻</button>
+    </div>
+
+    <div class="content">
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-1.webp">
+                <div class="timestamp">
+                    6:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p1.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">HTML & CSS Full Course - Beginner to Pro (2022)</p>
+                    <p class="info-author">SuperSimpleDev</p>
+                    <p class="info-data"> 82万次观看 &bull; 4个月前 </p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-2.webp">
+                <div class="timestamp">
+                    20:25
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p2.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">ASMR SPICY NOODLES WITH KING CRABS (EATING SOUNDS) LIGHT WHISPERS | SAS-ASMR</p>
+                    <p class="info-author">SAS-ASMR</p>
+                    <p class="info-data">26万次观看 &bull; 1个月前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+    
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-3.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p3.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">阿神拆鳥巢行動最終回！如何擁有又長又直又自然的瀏海！ft.@搞神馬 @阿神 ｜KEN桑の美髮小教室</p>
+                    <p class="info-author">KEN桑｜零貳柒髮廊與酒館</p>
+                    <p class="info-data">16万次观看 &bull; 1年前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-4.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p4.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">如何才能摆脱贫穷？穷人和富人有什么差别？【2019诺贝尔经济学奖解读】</p>
+                    <p class="info-author">李永乐老师</p>
+                    <p class="info-data">498万次观看 &bull; 2年前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-5.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p5.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">【#遊戯王】無限妨害！？　なんでも何度でも無効化するパワーカード　最新版ユニコールコントロールが最強すぎた【ゆっくり実況】</p>
+                    <p class="info-author">専攻は魔轟神です!</p>
+                    <p class="info-data">8753次观看 &bull; 1年前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-6.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p6.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">Circle Of Love | Rudy Mancuso</p>
+                    <p class="info-author">Rudy Mancuso</p>
+                    <p class="info-data">6987万次观看 &bull; 5年前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-7.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p7.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">現在賀卡已經進化到這種程度了？別人收到還以為你花錢找別人做的 | Canva 影片編輯教學</p>
+                    <p class="info-author">PAPAYA 電腦教室</p>
+                    <p class="info-data">10万次观看 &bull; 6个月前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-8.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p8.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">Why Socrates Hated Democracy</p>
+                    <p class="info-author">The School of Life</p>
+                    <p class="info-data"> 1089万次观看 &bull; 5年前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+
+        <div class="content-element">
+            <div class="video-cover">
+                <img class="cover-image" src="images/content-element-9.webp">
+                <div class="timestamp">
+                    2:03:05
+                </div>
+            </div>
+            <div class="video-info">
+                <div class="profile-picture">
+                    <img src="images/p9.jpg">
+                </div>
+                <div class="text-info">
+                    <p class="info-title">Vue JS Crash Course</p>
+                    <p class="info-author">Traversy Media</p>
+                    <p class="info-data">85万次观看 &bull; 1年前</p>
+                </div>
+                <div class="info-more">
+                    <img src="icons/more.svg">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
