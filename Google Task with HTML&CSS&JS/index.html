@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Task</title>
+  <link type="image/x-ico" rel="icon" href="images/logo.png">
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="main.js"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="navigator">
+    <div class="logo">
+      <div class="circle"></div>
+      <div class="rectangle"></div>
+    </div>
+    Full Screen for Google Tasks
+    <input type="search" placeholder="Search" />
+    <button>Add to Desktop</button>
+    <button>
+      <img src="images/setting.svg"
+    </button>
+  </div>
+
+  <div class="panel">
+    <div class="l-section">
+      left
+    </div>
+
+    <div class="m-section">
+      <input id="title-input" type="search" />
+      <input id="date-input" type="date" />
+      <button id="date-input" onclick="addTask()">Add a Task</button>
+      <div id="todo-list"></div>
+    </div>
+
+    <div class="r-section" style="margin-top: 30px">
+      <input class="task-detail" type="text" placeholder="add details" />
+    </div>
+
+    <!-- <div class="search">
+      <form action="#" method="post">
+        <img src="./images/more.svg" alt="">
+        <input type="text" name="condition" placeholder="请输入搜索条件">
+        <input type="submit" value="搜索">
+      </form>	
+    </div> -->
+  </div>
+  <script src="main.js"></script>
+</body>
+
+</html>

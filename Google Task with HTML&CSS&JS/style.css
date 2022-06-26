@@ -1,0 +1,57 @@
+.navigator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(255, 210, 30);
+}
+
+.logo {
+  
+  display: flex;
+
+}
+
+.panel {
+  background-color: #f9f9f9;
+}
+
+.m-section {
+  background-color: rgb(200, 190, 190);
+}
+
+#todo-list {
+  color: white;
+  background-color: #4f4729;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  background: #1996f0;
+  border-radius: 10px;
+}
+
+.rectangle {
+  width: 60px;
+  height: 16px;
+  border-radius: 50px;
+  background: #1996f0;
+  transform: rotate(315deg);
+}
+
+#cross {
+  background: red;
+  height: 100px;
+  position: relative;
+  width: 20px;
+}
+
+#cross:after {
+  background: red;
+  content: "";
+  height: 20px;
+  left: -40px;
+  position: absolute;
+  top: 40px;
+  width: 100px;
+}
