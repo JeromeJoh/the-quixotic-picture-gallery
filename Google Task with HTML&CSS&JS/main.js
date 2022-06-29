@@ -1,22 +1,31 @@
 // Model
 
+// class todos {
+//   constructor(id, title, date, time) {
+//     this.id = id
+//     this.title = title
+//     this.date =date
+//   }
+// }
+
 let todos;
 const saved = JSON.parse(localStorage.getItem('todo-list'));
 
 if (Array.isArray(saved)) {
   todos =saved;
 } else {
-  todos = [{ id: 1, title: 'Task1', date: '2022-06-27' },
-  { id: 2, title: 'Task2', date: '2022-07-09' },
-  { id: 3, title: 'Task3', date: '2022-10-15' }]
+  todos = [{ id: 1, title: 'Task1', date: '2022-06-27',detail: 'comment1' },
+  { id: 2, title: 'Task2', date: '2022-07-09' ,detail: 'comment2' },
+  { id: 3, title: 'Task3', date: '2022-10-15' ,detail: 'comment3' }]
 }
 
-const creatTask = (title, date) => {
+const creatTask = (title, date, detail) => {
   const id = new Date().getTime();
-  todos.push({
+  todos.unshift({
     title: title,
     date: date,
-    id: id
+    id: id,
+    detail: detail
   });
 }
 
@@ -64,18 +73,28 @@ const render = () => {
 
 render()
 
+function KeyP(v) {
+  document.getElementById('title-input-2').value = v.value;
+}
+
+function KeyN(v) {
+  document.getElementById('title-input-1').value = v.value;
+}
+
 
 
 //Controller
 
 const  addTask = () => {
-  const title = document.getElementById('title-input').value;
+  const title = document.getElementById('title-input-1').value;
   const date = document.getElementById('date-input').value;
+  const detail = document.getElementById('task-detail').value
 
-  document.getElementById('title-input').value = '';
+  document.getElementById('title-input-1').value = '';
   document.getElementById('date-input').value = '';
 
-  creatTask(title,date);
+  creatTask(title, date, detail);
+  console.log(todos);
   saveList();
   render();
 }
@@ -87,3 +106,21 @@ function deleteTask(event) {
   saveList();
   render();
 }
+
+
+
+//附加功能實現
+
+let lists = {todos, };
+
+const createList = document.getElementById('list-create');
+
+createList.addEventListener('click', function() {
+  if (0) {
+    const element = document.createElement('button');
+    const listDisplay = document.getElementById('list-display');
+  listDisplay.appendChild(element);
+  } else {
+
+  }
+})
