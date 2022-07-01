@@ -43,16 +43,8 @@
           <div class="plus"></div>
         </button>
       </div>
-      <div id="list-display">
-        <button class="list-displaying">
-          <img src="images/move.svg">
-          Inbox
-        </button>
-        <button class="list-folding">
-          <img src="images/move.svg">
-          Project
-        </button>
-      </div>
+      <div id="pop-button"></div>
+      <div id="list-display"></div>
     </div>
 
     <div class="m-section">
@@ -62,20 +54,20 @@
           <img src="images/more.svg">
         </button>
       </div>
-      <input id="title-input-1" type="search" onkeyup="KeyP(this);"/>
-      <button class="add" onclick="addTask()">Add a Task</button>
-      <div id="todo-list"></div>
+      <div id="todo-list">
+      </div>
     </div>
-
+    
     <div class="r-section">
       <div class="detail-above">
-        <input id="title-input-2" type="search" onkeyup="KeyN(this);"/>
+        <input id="title-input" type="search""/>
         <input id="date-input" type="date" />
       </div>
       <div class="detail-below">
         <img src="images/text.svg">
-        <input id="task-detail" type="text" placeholder="add details" />
+        <textarea id="task-detail" placeholder="add details"></textarea>
       </div>
+      <button id="add-task" onclick="addTask()"><div class="plus"></div></button>
     </div>
 
     <!-- <div class="search">
