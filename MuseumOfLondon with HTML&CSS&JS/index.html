@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - Museum of London</title>
+    <link rel="icon" href="icons/museum.ico">
+    <link rel="stylesheet" href="CSS/reset.css">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+            <img src="images/logo.png"/>
+            <p>Museum of London U.K.</p>
+        </div>
+        <ul class="items">
+            <li><a href="#"><span>Collection</span></a></li>
+            <li><a href="#"><span>Membership</span></a></li>
+            <li>
+                <a href="#" id="book"><span>Visit</span></a>
+                <div class="sidebar">
+                    <div class="ticket">
+                        <p id="show-title"><b>The World of Stonehenge</b></p>
+                        <p>Exhibition</p>
+                        <p>17 Feb 2022 - 17 Jul 2022</p>
+                        <img src="images/ticket1.jpg">
+                    </div>
+                    <div class="ticket">
+                        <p id="show-title"><b>Hieroglyphs</b></p>
+                        <p>Exhibition</p>
+                        <p>17 Feb 2022 - 17 Jul 2022</p>
+                        <img src="images/ticket2.jpg">
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="page1 fullscreen">
+        <video src="videoplayback.mp4" autoplay loop muted></video>
+        <div class="info">
+            <p>History </br> & </br> Culture</p>
+            <button>Explore Now!</button>
+            <img src="icons/arrow.svg">
+        </div>
+    </div>
+
+    <div class="page2 fullscreen" id="part2" style="display: none;">
+        <div class="page2-image fullscreen">
+            <img id="displaying" src="images/canva.jpg">
+            <div class="category">
+                <div class="wrapper">
+                    <button onmouseover="switchImage('images/canva.jpg'); "><span>Canvas</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('images/sketch.jpg'); "><span>Sketch</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('images/classic.jpg'); "><span>Classic</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('images/future.jpg'); "><span>Future</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('images/sculpture.jpg'); "><span>Sculpture</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page3 fullscreen" style="display: none;">
+        <div class="left-2">
+            <div class="fullscreen left-2-top">
+                <img class="fullscreen" src="images/2-1.jpg">
+                <div class="hidden fullscreen">
+                    <ul>
+                        <li>Published on July 18, 2018</li>
+                        <li>SAMSUNG, NX1000</li>
+                        <li>For prints and original paintings: www.artbystevej.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="fullscreen left-2-bottom">
+                <img class="fullscreen" src="images/2-2.jpg">
+                <div class="hidden fullscreen">
+                    <ul>
+                        <li>Published on March 5, 2019</li>
+                        <li>SONY, ILCE-6000</li>
+                        <li>Free to use under the Unsplash License</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-2 fullscreen">
+            <img class="fullscreen" src="images/2-3.jpg">
+            <div class="hidden fullscreen">
+                <ul>
+                    <li>Saint Cecilia of Rome, by François-Joseph Navez. </li>
+                    <li>Published on January 6, 2020</li>
+                    <li>Dual License: Public Domain & Unsplash License</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="page4 fullscreen" style="display: none;">
+        <div class="shell">
+            <div class="box">
+                <img src="images/4-1.jpg">
+                <span>Statue</span>
+            </div>
+            <div class="box">
+                <img src="images/4-2.jpg">
+                <span>Write</span>
+            </div>
+            <div class="box">
+                <img src="images/4-3.jpg">
+                <span>Brush</span>
+            </div>
+            <div class="box">
+                <img src="images/4-4.jpg">
+                <span>Photo</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="page5 fullscreen" style="display: none;">
+        <img class="fullscreen" src="images/fullscreen.jpg">
+        <p>Presented By JeromeJoh</p>
+    </div>
+
+    <div class="switch-pages">
+        <button onclick="switchPage(0)" id="active"></button>
+        <button onclick="switchPage(1)" ></button>
+        <button onclick="switchPage(2)" ></button>
+        <button onclick="switchPage(3)" ></button>
+        <button onclick="switchPage(4)" ></button>
+    </div>
+    
+
+    <script src="main.js"></script>
+</body>
+</html>
