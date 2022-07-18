@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+body {
+    background-color: #FEFBF6;
+}
+
+#ele {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, .5);
+}

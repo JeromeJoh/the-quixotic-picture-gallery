@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="icon" href="ico.svg" type="images/x-ico">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <input id="monitor" type="text" >
+        <table cellspacing="0">
+            <tr>
+                <td colspan="3" onclick="activate(this)">+</td>
+                <td id="back-button">Backspace</td>
+            </tr>
+            <tr>
+                <td onclick="activate(this)">7</td>
+                <td onclick="activate(this)">8</td>
+                <td onclick="activate(this)">9</td>
+                <td onclick="activate(this)">-</td>
+            </tr>
+            <tr>
+                <td onclick="activate(this)">4</td>
+                <td onclick="activate(this)">5</td>
+                <td onclick="activate(this)">6</td>
+                <td onclick="activate(this)">&times;</td>
+            </tr>
+            <tr>
+                <td onclick="activate(this)">1</td>
+                <td onclick="activate(this)">2</td>
+                <td onclick="activate(this)">3</td>
+                <td onclick="activate(this)">&divide;</td>
+            </tr>
+            <tr>
+                <td id="clear-button">Clear</td>
+                <td onclick="activate(this)">0</td>
+                <td onclick="activate(this)">.</td>
+                <td id="result">=</td>
+            </tr>
+        </table>
+    </section>
+    <script src="main.js"></script>
+</body>
+</html>

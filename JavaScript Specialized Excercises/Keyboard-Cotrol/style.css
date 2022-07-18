@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-align: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+
+
+body {
+    background-color: #FEFBF6;
+}
+
+#ele {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: black;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+footer {
+    font-family: 'Gill Sans MT', sans-serif;
+    position: fixed;
+    bottom: 50px;
+    text-align: center;
+    font-size: 30px;
+    word-spacing: 20px;
+    width: 100%;
+    color: #888;
+}
