@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font-family: 'Anton', sans-serif;
+}
+
+body {
+    background-color: black;
+    color: #dd3903;
+}
+
+div {
+    width: 500px;
+    font-size: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(255, 255, 255, .9);
+    word-spacing: 20px;
+    position: fixed;
+}
+
+#b1 {
+    top: 130px;
+    left: 0;
+}
+
+#b2 {
+    bottom: 130px;
+    right: 0;
+}
