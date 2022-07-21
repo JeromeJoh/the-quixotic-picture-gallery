@@ -12,6 +12,13 @@ html, body {
 body {
     background-color: black;
     color: #dd3903;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+audio {
+    margin-bottom: 50px;
 }
 
 div {
@@ -25,11 +32,11 @@ div {
 }
 
 #b1 {
-    top: 130px;
+    top: 100px;
     left: 0;
 }
 
 #b2 {
-    bottom: 130px;
+    bottom: 170px;
     right: 0;
 }
