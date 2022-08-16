@@ -1,0 +1,131 @@
+.categories {
+    background-color: white;
+    height: 56px;
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    border-bottom: 1px solid rgb(229,229,229);
+    padding-top: 54px;
+}
+
+.category-button {
+    background-color: rgb(242,242,242);
+    height: 32px;
+    font-size: 14px;
+    border: 1px solid rgb(217,217,217);
+    border-radius: 16px;
+    padding: 0 12px 2px;
+    flex-shrink: 0;
+}
+
+.current-category {
+    background-color: rgb(3,3,3);
+    color: white;
+    border: 1px solid rgb(3,3,3);
+}
+
+.category-button:hover {
+    background-color: rgb(229,229,229);
+}
+
+.current-category:hover {
+    background-color: rgb(3,3,3);
+}
+
+main {
+    display: flex;
+    gap: 16px;
+    padding-left: 100px;
+    padding-top: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+}
+
+main>section {
+    display: flex;
+    width: 32%;
+    flex-direction: column;
+}
+
+section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section:hover .info-more {
+    opacity: 1;
+}
+
+.video-cover {
+    position: relative;
+    margin-bottom: 6px;
+}
+
+.timestamp {
+    position:absolute;
+    right: 8px;
+    bottom: 8px;
+    padding: 4px 4px;
+    background: black;
+    border-radius: 2px;
+    color: white;
+    font-weight: 700;
+    font-size: 10px;
+}
+
+.video-info {
+    display: flex;
+    justify-content: left;
+    margin: 0 4px;
+}
+
+.text-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-picture img {
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    margin-top: 2px;
+}
+
+.info-title {
+    font-size: 14px;
+    font-weight:500;
+    padding-left: 8px;
+    padding-top: 4px;
+    margin-bottom: 8px;
+}
+
+.info-author {
+    font-size: 10px;
+    padding-left: 8px;
+    margin-bottom: 4px;
+}
+
+.info-data {
+    font-size: 10px;
+    padding-left: 8px;
+}
+
+.info-more {
+    opacity: 0;
+}
+
+.info-more img {
+    height: 20px;
+    width: 20px;
+    padding: 10px 10px;
+    border-radius: 50%;
+    margin-right: -16px;
+}
+
+.info-more img:active {
+    background-color: rgb(224,224,224);
+}
