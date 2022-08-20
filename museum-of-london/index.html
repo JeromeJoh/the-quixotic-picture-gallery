@@ -1,83 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta name="author" content="JeromeJoh">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage - Museum of London</title>
     <link rel="icon" href="icons/museum.ico">
-    <link rel="stylesheet" href="CSS/reset.css">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <div class="nav">
+    <header role="banner">
         <div class="logo">
-            <img src="images/logo.png"/>
-            <p>Museum of London U.K.</p>
+            <a href="#">
+                <p>Museum of London</p>
+            </a>
         </div>
-        <ul class="items">
-            <li><a href="#"><span>Collection</span></a></li>
-            <li><a href="#"><span>Membership</span></a></li>
+        <ul class="nav">
+            <li><a href="#"><span>· Membership ·</span></a></li>
+            <li><a href="#"><span>· Collections ·</span></a></li>
             <li>
-                <a href="#" id="book"><span>Visit</span></a>
+                <a href="#"><span>· Exhibitions ·</span></a>
                 <div class="sidebar">
-                    <div class="ticket">
-                        <p id="show-title"><b>The World of Stonehenge</b></p>
+                    <aside>
+                        <p><b>The World of Stonehenge</b></p>
                         <p>Exhibition</p>
                         <p>17 Feb 2022 - 17 Jul 2022</p>
                         <img src="images/ticket1.jpg">
-                    </div>
-                    <div class="ticket">
-                        <p id="show-title"><b>Hieroglyphs</b></p>
+                    </aside>
+                    <aside>
+                        <p><b>Hieroglyphs</b></p>
                         <p>Exhibition</p>
                         <p>17 Feb 2022 - 17 Jul 2022</p>
                         <img src="images/ticket2.jpg">
-                    </div>
+                    </aside>
                 </div>
             </li>
         </ul>
-    </div>
+    </header>
 
-    <div class="page1 fullscreen">
+    <section class="page1 fullscreen">
         <video src="videoplayback.mp4" autoplay loop muted></video>
         <div class="info">
-            <p>History </br> & </br> Culture</p>
+            <p>History & Culture</p>
             <button>Explore Now!</button>
             <img src="icons/arrow.svg">
         </div>
-    </div>
+    </section>
 
-    <div class="page2 fullscreen" id="part2" style="display: none;">
+    <section class="page2 fullscreen" style="display: none;">
         <div class="page2-image fullscreen">
-            <img id="displaying" src="images/canva.jpg">
-            <div class="category">
+            <img id="onDisplay" src="images/canva.jpg">
+            <nav class="category">
                 <div class="wrapper">
-                    <button onmouseover="switchImage('images/canva.jpg'); "><span>Canvas</span></button>
+                    <button onmouseover="switchImage('images/canva.jpg')"><span>Canvas</span></button>
                 </div>
 
                 <div class="wrapper">
-                    <button onmouseover="switchImage('images/sketch.jpg'); "><span>Sketch</span></button>
+                    <button onmouseover="switchImage('images/sketch.jpg')"><span>Sketch</span></button>
                 </div>
 
                 <div class="wrapper">
-                    <button onmouseover="switchImage('images/classic.jpg'); "><span>Classic</span></button>
+                    <button onmouseover="switchImage('images/classic.jpg')"><span>Classic</span></button>
                 </div>
 
                 <div class="wrapper">
-                    <button onmouseover="switchImage('images/future.jpg'); "><span>Future</span></button>
+                    <button onmouseover="switchImage('images/future.jpg')"><span>Future</span></button>
                 </div>
 
                 <div class="wrapper">
-                    <button onmouseover="switchImage('images/sculpture.jpg'); "><span>Sculpture</span></button>
+                    <button onmouseover="switchImage('images/sculpture.jpg')"><span>Sculpture</span></button>
                 </div>
-            </div>
+            </nav>
         </div>
-    </div>
+    </section>
 
-    <div class="page3 fullscreen" style="display: none;">
+    <section class="page3 fullscreen" style="display: none;">
         <div class="left-2">
             <div class="fullscreen left-2-top">
                 <img class="fullscreen" src="images/2-1.jpg">
@@ -110,9 +114,9 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="page4 fullscreen" style="display: none;">
+    <section class="page4 fullscreen" style="display: none;">
         <div class="shell">
             <div class="box">
                 <img src="images/4-1.jpg">
@@ -131,42 +135,43 @@
                 <span>Photo</span>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="page5 fullscreen" style="display: none;">
+    <section class="page5 fullscreen" style="display: none;">
         <img class="fullscreen" src="images/fullscreen.jpg">
         <p>Presented By JeromeJoh</p>
-    </div>
+    </section>
 
-    <div class="switch-pages">
+    <nav class="switch-pages">
         <button onclick="switchPage(0)" id="active"></button>
-        <button onclick="switchPage(1)" ></button>
-        <button onclick="switchPage(2)" ></button>
-        <button onclick="switchPage(3)" ></button>
-        <button onclick="switchPage(4)" ></button>
-    </div>
-    
+        <button onclick="switchPage(1)"></button>
+        <button onclick="switchPage(2)"></button>
+        <button onclick="switchPage(3)"></button>
+        <button onclick="switchPage(4)"></button>
+    </nav>
+
 
     <script>
         const switchImage = filename => {
-        const imgInDisplay = document.getElementById('displaying');
-        imgInDisplay.setAttribute('src',filename);
-    }
+            const imgInDisplay = document.getElementById('onDisplay')
+            imgInDisplay.setAttribute('src', filename)
+        }
 
-    const switchPage = num => {
-        for(var i=0; i<5; i++) {
-            str = '.page'+ (i+1);
-            let page = document.querySelector(str);
-            let button = document.querySelectorAll('.switch-pages>button');
-            if(i == num){
-                page.style.display = 'block';
-                button[i].id = 'active';
-            } else {
-                page.style.display = 'none';
-                button[i].id = '';
+        const switchPage = num => {
+            for (let i = 0; i < 5; i++) {
+                pageName = '.page' + (i + 1)
+                let currentPage = document.querySelector(pageName)
+                let button = document.querySelectorAll('.switch-pages>button')
+                if (i == num) {
+                    currentPage.style.display = 'block'
+                    button[i].id = 'active'
+                } else {
+                    currentPage.style.display = 'none'
+                    button[i].id = ''
+                }
             }
         }
-    }
     </script>
 </body>
+
 </html>

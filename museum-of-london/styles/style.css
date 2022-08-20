@@ -1,5 +1,5 @@
 /* 导航栏样式-开始 */
-.nav {
+header {
     position: fixed;
     top: 0;
     left: 0;
@@ -8,43 +8,27 @@
     z-index: 800;
     font-size: 16px;
     color: white;
+    font-weight: 700;
 }
 
-.nav span {
-    color: white;
-}
-
-.nav img {
-    position: fixed;
-    margin-left: 20px;
-    margin-right: 16px;
-    margin-top: 6px;
-    height: 100px;
-}
 
 .logo {
     float: left;
     color: #fff;
     font-size: 20px;
-    font-weight: 700;
     width: 500px;
     height: 52px;
     line-height: 52px;
     cursor: pointer;
+    padding-left: 30px;
 }
 
-.logo p {
-    margin-left: 150px;
-}
-
-
-
-.items {
+.nav {
     float: right;
     cursor: pointer;
 }
 
-.items>li {
+.nav>li {
     display: block;
     float: left;
     width: 156px;
@@ -53,7 +37,7 @@
     text-align: center;
 }
 
-.items>li:hover {
+.nav>li:hover {
     background-color: rgba(255, 255, 255, .5);
 }
 
@@ -61,26 +45,78 @@
     margin-right: 0;
 }
 
-#book {
+nav:last-child>a {
     position: relative;
     z-index: 2000;
 }
 /* 导航栏样式-结束 */
 
 
+/* 侧边栏样式-开始 */
+.sidebar {
+    position: fixed;
+    top: 52px;
+    right: 0;
+    height: 100%;
+    width: 156px;
+    background-color: rgba(255, 255, 255, .5);
+    margin-right: -156px;
+    transition: margin-right .5s;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 200px;
+    background-color: rgb(29,29,29);
+    transition: all 0.15s;
+    position: relative;
+    padding-top: 5px;
+}
+
+aside:hover {
+    border: 4px solid #008f7c;
+    background-color: #008f7c;
+}
+
+aside>img {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 130px;
+    max-height: 100px;
+}
+
+aside>p {
+    text-align: left;
+    font: 400 12px Ubuntu;
+    width: 100%;
+    margin-bottom: 4px;
+    margin-top: 4px;
+    margin-left: 8px;
+}
+
+aside:first-child {
+    font: 700 16px Ubuntu;
+}
+/* 侧边栏样式-结束 */
 
 
 
 
 /* 第一页-开始 */
 .page1 {
-    padding: 0;
-    position: relative;
     text-align: center;
-    overflow: hidden;
 }
 
-.page1 video {
+.page1>video {
     height: 100%;
 }
 
@@ -94,7 +130,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-size: 110px;
+    font-size: 60px;
     color: rgba(255, 255, 255, 1);
     margin-top: 20px;
 }
@@ -104,7 +140,7 @@
     font-size: 20px;
     font-size: 500;
     color: white;
-    margin-top: 20px;
+    margin-top: 150px;
     background-color: rgba(255, 255, 255, .5);
     border: 2px solid white;
     padding: 10px;
@@ -148,13 +184,11 @@
 
 
 /* 第二页样式-开始 */
-.page2-image {
-    position: relative;
-    overflow: hidden;
-}
 
-#displaying {
+#onDisplay {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .category {
@@ -190,7 +224,6 @@
 }
 
 .wrapper:hover button {
-    background-color: rgba(255, 255, 255, 0.5);
     transform: translateY(-5px);
 }
 
@@ -198,14 +231,12 @@
     position: absolute;
     top: -35px;
     width: 100%;
-    opacity: 0;
     cursor: pointer;
+    display: none;
 }
 
 .wrapper:hover span {
     display: block;
-    margin-bottom: -200px;
-    opacity: 1;
 }
 /* 第二页样式-结束 */
 
@@ -215,11 +246,9 @@
 
 /* 第三页样式-开始 */
 .page3>div {
-    position: relative;
     height: 100%;
     width: 50%;
     float: left;
-    overflow: hidden;
 }
 
 .left-2>div {
@@ -236,7 +265,6 @@
     right: -100%;
     background-color: rgba(0, 0, 0, .5);
     transition: right .5s;
-    font-family: Ubuntu;
     font-size: 14px;
     font-weight: 400;
     color: rgb(255,255,255,.9);
@@ -266,10 +294,7 @@
 
 /* 第四页样式-开始 */
 .page4 {
-    background-color: black;
-    width: 100%;
-    height: 100%;
-    position: relative;
+    background-color: rgb(37, 37, 37);
     text-align: center;
 }
 
@@ -280,8 +305,8 @@
     align-items: flex-end;
     gap: 20px;
     position: absolute;
-    bottom: 0;
     left: 10%;
+    bottom: 0;
 }
 
 .box {
@@ -304,7 +329,7 @@
 }
 
 .box>span{
-    font: 400 20px Ubuntu;
+    font: 500 15px Ubuntu;
     text-align: center;
     height: 7%;
     display: flex;
@@ -323,64 +348,19 @@
 /* 第四页样式-结束 */
 
 
-/* 侧边栏样式-开始 */
-.sidebar {
-    padding-top: 80px;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 156px;
-    background-color: rgba(0, 0, 0, .5);
-    margin-right: -156px;
-    transition: margin-right .5s;
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    justify-content: flex-start;
-    align-items: center;
-}
 
-.ticket {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    align-items: flex-start;
-    width: 130px;
-    height: 200px;
-    background-color: rgb(29,29,29);
-    border: none;
-    transition: all 0.15s;
-    position: relative;
-}
+/* 第五页样式-开始 */
 
-.ticket:hover {
-    border: 4px solid #008f7c;
-    background-color: #008f7c;
-}
-
-.ticket>img {
-    margin: 0;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 130px;
-}
-
-.ticket>p {
-    text-align: left;
-    font: 400 12px Ubuntu;
+.page5 p {
     width: 100%;
-    margin-bottom: 4px;
-    margin-top: 4px;
-    margin-left: 8px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    font-size: 25px;
+    cursor: pointer;
 }
-
-#show-title {
-    font: 700 16px Ubuntu;
-}
-/* 侧边栏样式-结束 */
+/* 第五页样式-结束 */
 
 
 
@@ -394,49 +374,33 @@
     top: 40%;
     left: 50px;
     z-index: 900;
-    border-radius: 8px;
     width: 30px;
 }
 
 .switch-pages>button {
-    background-color: rgba(255, 255, 255, .9);
+    background-color: white;
     height: 16px;
     width: 16px;
     border: none;
     cursor: pointer;
-    transition: 0.15s;
-    border-radius: 50%;
+    transition: all 0.15s;
 }
 
 .switch-pages>button:hover {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-    border: 1px solid #e12660;
+    height: 20px;
+    width: 20px;
+    border: 3px solid #e12660;
+    transform: rotate(45deg);
 }
 
 #active {
     background-color: #e12660;
+    transform: rotate(45deg);
 }
 
 #active:hover {
     height: 16px;
     width: 16px;
-    border: none;
+    transform: rotate(45deg);
 }
 /* 切换按钮样式-结束 */
-
-.page5 {
-    position: relative;
-    overflow: hidden;
-}
-
-.page5 p {
-    width: 100%;
-    text-align: center;
-    color: #fff;
-    position: absolute;
-    bottom: 20px;
-    font-size: 25px;
-    cursor: pointer;
-}
