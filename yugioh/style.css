@@ -10,10 +10,6 @@ body{
     padding-top: 120px;
 }
 
-/* ::-webkit-scrollbar {
-    display: none;
-} */
-
 input {
     outline: none;
 }
@@ -29,11 +25,15 @@ li {
 img {
     border-image: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
 /* 全局样式-end */
 
 
 /* 导航栏样式-start */
-nav {
+header {
     height: 80px;
     width: 100%;
     border-bottom: 1px solid #ccc6c6;
@@ -45,17 +45,16 @@ nav {
     background-color: #f8f8f8;
 }
 
+header img {
+    cursor: pointer;
+}
+
 .logo {
     height: 100%;
     display: flex;
     justify-content: left;
     align-items: center;
     float: left;
-}
-
-.logo>img {
-    line-height: 100%;
-    cursor: pointer;
 }
 
 .search {
@@ -86,7 +85,6 @@ nav {
     top: 30px;
     right: 0;
     animation: floating 1.5s linear infinite;
-    cursor: pointer;
 }
 
 @keyframes floating {
@@ -107,7 +105,7 @@ nav {
     }
 }
 
-.nav-bar {
+nav {
     height: 100%;
     width: 35%;
     float: right;
@@ -116,7 +114,7 @@ nav {
     align-items: center;
 }
 
-.tool {
+nav>ul {
     display: flex;
     justify-content: right;
     align-items: center;
@@ -126,12 +124,7 @@ nav {
     float: left;
 }
 
-#page-active {
-    color: #bb1815;
-    border-bottom: 2px solid #bb1815;
-}
-
-.tool li {
+nav>ul li {
     height: 50px;
     line-height: 50px;
     text-align: center;
@@ -140,27 +133,31 @@ nav {
     margin-left: 30px;
 }
 
-.tool li:hover {
+nav>ul li:hover {
+    color: #bb1815;
+    border-bottom: 2px solid #bb1815;
+}
+
+#current-page {
     color: #bb1815;
     border-bottom: 2px solid #bb1815;
 }
 
 #menu {
-    display: block;
     height: 30px;
     width: 30px;
     border: 1px solid #000;
-    cursor: pointer;
     background: url('images/menu.svg') no-repeat;
     background-size: 20px;
     background-position: 3px;
     display: none;
     position: relative;
     top: 5px;
+    cursor: pointer;
 }
 
 #menu:hover {
-    background-color: #ccc6c6;
+    background-color: #bb1815;
 }
 
 /* 导航栏样式-end */
@@ -177,7 +174,7 @@ nav {
 }
 
 .container {
-    padding: 30px 20px;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, .1);
     margin-bottom: 20px;
@@ -223,7 +220,7 @@ nav {
     animation: floating 2s linear infinite;
 }
 
-.folding-div {
+.more-content {
     display: none;
 }
 
@@ -255,9 +252,6 @@ nav {
 
 
 /* 角色展示样式-strat */
-#white-bg {
-    background-color: #fff;
-}
 
 .characters>div{
     padding: 50px;
@@ -312,48 +306,28 @@ nav {
     display: none;
 }
 
-.profile {
-    width: 100px;
-    height: 200px;
-    float: left;
-}
 
-.profile img {
-    display: block;
-    width: 100px;
-    float: left;
-    border-radius: 2px;
-}
-
-.info {
-    flex: 1;
+.detail>table {
     width: 100%;
-    padding-left: 20px;
 }
 
 table, th, td {
     border: none;
     border-collapse: collapse;
+    padding: 10px;
 }
 
 table {
     width: 50%;
-    margin: 0px auto;
     font-size: 16px;
     float: left;
+    white-space: nowrap;
 }
 
 tr {
     border-bottom: 1px dotted #000;
 }
 
-th, td {
-    padding: 10px;
-}
-
-th {
-    color: white;
-}
 /* 作者介绍样式-end */
 /* 内容样式-end */
 
@@ -373,42 +347,16 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 媒体查询 */
+/* ===================================
+               媒体查询
+====================================== */
 
 /* 移动端 */
 @media screen and (max-width:768px) {
     .logo>img {
         height: 50px;
     }
-    .tool {
+    nav>ul {
         display: none;
     }
     #menu {
@@ -423,7 +371,7 @@ footer {
     .search {
         width: 60%;
     }
-    .nav-bar {
+    nav {
         width: 12%;
     }
     .container {
@@ -452,7 +400,7 @@ footer {
     .logo>img {
         height: 65px;
     }
-    .tool li {
+    nav>ul li {
         font-size: 15px;
     }
     .wrapper {
@@ -464,7 +412,7 @@ footer {
     .search {
         width: 41%;
     }
-    .nav-bar {
+    nav {
         width: 36%;
     }
     .container {
@@ -490,7 +438,7 @@ footer {
     .logo>img {
         height: 80px;
     }
-    .tool li {
+    nav>ul li {
         font-size: 18px;
     }
     .logo {
@@ -499,7 +447,7 @@ footer {
     .search {
         width: 43%;
     }
-    .nav-bar {
+    nav {
         width: 32%;
     }
     .works>div {

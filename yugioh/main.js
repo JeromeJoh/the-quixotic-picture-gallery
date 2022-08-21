@@ -1,11 +1,11 @@
-let flag = true;
+let displayable = true;
 
 const unfold = () => {
 
     //展示与折叠内容
-    const foldedDiv = document.querySelectorAll('.folding-div');
+    const foldedDiv = document.querySelectorAll('.more-content');
     foldedDiv.forEach(function(box) {
-        if(flag) {
+        if(displayable) {
             box.style.display = 'block';
         } else {
             box.style.display = 'none';
@@ -14,10 +14,10 @@ const unfold = () => {
 
     //按钮变化
     const btn = document.querySelector('.btn>button');
-    if(flag) {
+    if(displayable) {
         btn.style.transform = 'rotateX(180deg)';
     } else {
         btn.style.transform = '';
     }
-    flag = !flag;
+    displayable = !displayable;
 }
