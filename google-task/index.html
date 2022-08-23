@@ -3,24 +3,26 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="author" content="JeromeJoh">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Task</title>
   <link type="image/x-ico" rel="icon" href="images/logo.png">
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="style.css">
+  <script src="main.js" defer></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <div class="navigator">
+  <header role="banner">
     <div class="logo">
       <div class="circle"></div>
       <div class="rectangle"></div>
       <p>Full Screen for Google Tasks</p>
     </div>
-    <div class="tool">
+    <nav>
       <div class="search">
         <img src="images/search.svg">
         <input type="search" placeholder="Search" />
@@ -29,15 +31,15 @@
         <img src="images/download.svg">
         Add to Taskbar
       </button>
-      <button class="settings">
+      <button class="setting">
         <img src="images/setting.svg">
       </button>
-    </div>
-  </div>
+    </nav>
+  </header>
 
-  <div class="panel">
-    <div class="l-section">
-      <div id="list-create">
+  <main role="main">
+    <section class="l-section">
+      <div id="new-list">
         <button>
           <p>Lists</p>
           <div class="plus"></div>
@@ -45,9 +47,9 @@
       </div>
       <div id="pop-button"></div>
       <div id="list-display"></div>
-    </div>
+    </section>
 
-    <div class="m-section">
+    <section class="m-section">
       <div class="list-info">
         <p>Inbox</p>
         <button class="more-button">
@@ -56,29 +58,23 @@
       </div>
       <div id="todo-list">
       </div>
-    </div>
-    
-    <div class="r-section">
-      <div class="detail-above">
-        <input id="title-input" type="search""/>
-        <input id="date-input" type="date" />
-      </div>
-      <div class="detail-below">
-        <img src="images/text.svg">
-        <textarea id="task-detail" placeholder="add details"></textarea>
-      </div>
-      <button id="add-task" onclick="addTask()"><div class="plus"></div></button>
-    </div>
+      <button id="new-task" onclick="addTask()">
+        <div class="plus"></div>
+      </button>
+    </section>
 
-    <!-- <div class="search">
-      <form action="#" method="post">
-        <img src="./images/more.svg" alt="">
-        <input type="text" name="condition" placeholder="请输入搜索条件">
-        <input type="submit" value="搜索">
-      </form>	
-    </div> -->
-  </div>
-  <script src="main.js"></script>
+    <section class="r-section">
+      <div class="detail-info">
+        <input id="title-input" type="search""/>
+        <input id=" date-input" type="date" />
+      </div>
+      <div class="timestamp""><span>2020-08-20</span></div>
+      <div class="remark">
+        <img src="images/text.svg">
+        <textarea id="task-detail" placeholder="add details" rows="1"></textarea>
+      </div>
+    </section>
+  </main>
 </body>
 
 </html>

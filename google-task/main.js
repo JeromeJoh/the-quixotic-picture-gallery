@@ -1,21 +1,34 @@
 // Model
-
-
-let todos;
-const saved = JSON.parse(localStorage.getItem('todo-list'));
-
-if (Array.isArray(saved)) {
-  todos =saved;
-} else {
-  todos = [{ id: 1, title: 'Task1', date: '2022-06-27',detail: 'comment1' },
-  { id: 2, title: 'Task2', date: '2022-07-09' ,detail: 'comment2' },
-  { id: 3, title: 'Task3', date: '2022-10-15' ,detail: 'comment3' }]
+class Task {
+  constructor(id, name, deadline, remark) {
+    this.id = id
+    this.name = name
+    this.deadline = deadline
+    this.remark = remark
+  }
 }
 
-let lists =['Project','Waiting']
+let todos, lists;
+const saved = JSON.parse(localStorage.getItem('todo-lists'));
 
-const creatList = (title) => {
-  todos.push(title);
+
+
+lists = [new Task(1, '任务1', '2022 - 06 - 27', 'remark1'),
+new Task(2, '任务2', '2022 - 06 - 28', 'remark2'),
+new Task(3, '任务3', '2022 - 06 - 12', 'remark3')]
+
+if (Array.isArray(saved)) {
+  todos = saved
+  console.log('已读取本地存储数据')
+} else {
+  todos = [{ id: 1, title: 'Task1', date: '2022-06-27', detail: 'comment1' },
+  { id: 2, title: 'Task2', date: '2022-07-09', detail: 'comment2' },
+  { id: 3, title: 'Task3', date: '2022-10-15', detail: 'comment3' }]
+}
+
+
+const creatList = (listName) => {
+  todos.push(listName)
 }
 
 const creatTask = (title, date, detail) => {
@@ -29,22 +42,21 @@ const creatTask = (title, date, detail) => {
 }
 
 const saveTask = () => {
-  localStorage.setItem('todo-list',JSON.stringify(todos));
+  localStorage.setItem('todo-lists', JSON.stringify(todos));
 }
 
 const saveList = () => {
-  localStorage.setItem('todo-list',JSON.stringify(todos));
+  localStorage.setItem('todo-lists', JSON.stringify(todos));
 }
 
 
 
 
 // View
-
 const render = () => {
 
   //reset all lists
-  document.getElementById('list-display').innerHTML =  `
+  document.getElementById('list-display').innerHTML = `
   <button id="list-displaying">
     <img src="images/move.svg">
     Inbox
@@ -94,7 +106,7 @@ render()
 
 //Controller
 
-const  addTask = () => {
+const addTask = () => {
   if (document.getElementById('title-input').value === '') {
     document.getElementById('title-input').focus();
   } else {
@@ -134,11 +146,11 @@ function deleteTask(event) {
 
 //新增任务列表操作
 
-let createList = document.getElementById('list-create')
+let createList = document.getElementById('new-list')
 let cnt = 0;
 
-createList.addEventListener('click', function() {
-  if (cnt%2 === 0) {
+createList.addEventListener('click', function () {
+  if (cnt % 2 === 0) {
     cnt = cnt + 1;
     const element = document.createElement('input');
     element.id = 'list-name';
@@ -155,7 +167,7 @@ createList.addEventListener('click', function() {
 
     const saveButton = document.getElementById('save-button');
     const list = document.getElementById('list-name');
-    saveButton.onclick = function() {
+    saveButton.onclick = function () {
       const newList = document.getElementById(element.id);
       popButton.innerHTML = '';
       lists.push(newList.value);
@@ -163,7 +175,7 @@ createList.addEventListener('click', function() {
     }
 
     const cancelButton = document.getElementById('cancel-button');
-    cancelButton.onclick = function() {
+    cancelButton.onclick = function () {
       popButton.innerHTML = '';
     }
   } else {
@@ -172,6 +184,18 @@ createList.addEventListener('click', function() {
     popButton.innerHTML = '';
   }
 })
+
+
+//自适应高度文本框
+const autoInput = document.getElementById("task-detail");
+
+autoInput.addEventListener("input", function () {
+  let inputScrollTop = autoInput.scrollTop;
+  let inputHeight = autoInput.offsetHeight;
+  if (autoInput.scrollHeight >= 75) {
+    autoInput.style.height = inputScrollTop + inputHeight + "px";
+  } 
+});
 
 
 

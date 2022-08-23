@@ -1,48 +1,46 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  font-family: Roboto, sans-serif,SimHei;
 }
 
 input::-webkit-search-cancel-button{display:none;}
 
-.navigator {
-  display: flex;
+/* ===================================
+    1. 导航样式-开始
+====================================== */
+header {
   height: 50px;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: rgb(255, 210, 30);
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #e7bb22;
-  font-family: Roboto, sans-serif,SimHei;
+  border-bottom: 1px solid #e7bb22;
   font-size: 18px;
 }
 
-.navigator img {
+header img {
   height: 20px;
-  margin-left: 4px;
-  margin-right: 4px;
+  margin: 0 4px;
 }
 
-.navigator input {
+header input {
   height: 30px;
   width: 172px;
   background-color: rgb(255, 242, 188);
-  border-style: solid;
-  border-width: 1px;
+  border: 1px solid #ffc800;
   border-radius: 4px;
-  border-color: #ffc800;
   opacity: 0.5;
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 15px;
   padding-left: 30px;
+  outline: none;
 }
 
-.navigator input:focus {
+header input:focus {
   background-color: white;
   border: none;
   width: 300px;
   opacity: 1;
-  outline: none;
 }
 
 .logo {
@@ -58,7 +56,7 @@ input::-webkit-search-cancel-button{display:none;}
   color: #4f4729;
 }
 
-.tool {
+nav {
   display: flex;
   justify-content: right;
   align-items: center;
@@ -76,19 +74,16 @@ input::-webkit-search-cancel-button{display:none;}
 
 .add-to-taskbar {
   height: 30px;
-  background-color: #ffd21e;
-  border-color: #d9b31a;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 4px;
   margin-left: 12px;
   margin-right: 14px;
   padding-right: 12px;
-  font-family: Roboto, sans-serif, SimHei;
+  background-color: #ffd21e;
+  color: #4f4729;
   font-size: 16px;
+  border: 1px solid #d9b31a;
+  border-radius: 4px;
   display: flex;
   align-items: center;
-  color: #4f4729;
 }
 
 .add-to-taskbar:hover {
@@ -96,31 +91,44 @@ input::-webkit-search-cancel-button{display:none;}
 }
 
 
-.settings {
-  border: none;
+.setting {
   height: 40px;
   width: 40px;
   background-color: rgb(255, 210, 30);
+  border: none;
   border-radius: 20px;
   margin-right: 16px;
 }
 
-.settings img {
-  margin-top: 2px;
-  height: 15px;
-}
-
-.settings:hover {
+.setting:hover {
   background-color: #edc31c;
 }
 
-.panel {
+.setting img {
+  margin-top: 2px;
+  height: 15px;
+}
+/* ===================================
+    1. 导航样式-结束
+====================================== */
+
+
+/* ===================================
+    2. 页面主体样式-开始
+====================================== */
+main {
   display: flex;
   width: 100%;
   position: fixed;
   top: 51px;
   bottom: 0px;
 }
+
+
+
+/* ===================================
+    2.1 列表集合样式-开始
+====================================== */
 
 .l-section {
   background-color: #f9f9f9;
@@ -168,6 +176,16 @@ input::-webkit-search-cancel-button{display:none;}
   color: #1996f0;
 }
 
+/* ===================================
+    2.1 列表集合样式-结束
+====================================== */
+
+
+
+/* ===================================
+    2.2 任务集合样式-开始
+====================================== */
+
 .m-section {
   flex: 5.5;
   border-left-width: 1px;
@@ -176,7 +194,19 @@ input::-webkit-search-cancel-button{display:none;}
   position: relative;
 }
 
+
+/* ===================================
+    2.2 任务集合样式-结束
+====================================== */
+
+
+
+/* ===================================
+    2.3 任务信息样式-开始
+====================================== */
+
 .r-section {
+  position: relative;
   border-left-width: 1px;
   border-left-style: solid;
   border-left-color: #e6e6e6;
@@ -205,14 +235,14 @@ input::-webkit-search-cancel-button{display:none;}
 
 
 
-#list-create {
+#new-list {
   display: flex;
   justify-content: end;
   background-color: #f9f9f9;
   height: 80px;
 }
 
-#list-create button {
+#new-list button {
   background-color: #f9f9f9;
   display: flex;
   justify-content: left;
@@ -220,7 +250,6 @@ input::-webkit-search-cancel-button{display:none;}
   width: 100%;
   height: 50px;
   border: none;
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 18px;
   margin-top: 30px;
   border-bottom-style: solid;
@@ -229,22 +258,22 @@ input::-webkit-search-cancel-button{display:none;}
   transition: background-color 0.15s;
 }
 
-#list-create input {
+#new-list input {
   background-color: #1996f0;
   height: 10px;
 }
 
-#list-create button:hover {
+#new-list button:hover {
   background-color: #f0f0f0;
   border-radius: 4px;
   border-bottom-color: #f0f0f0;
 }
 
-#list-create:hover .plus {
+#new-list:hover .plus {
   color: #1996f0;
 }
 
-#list-create p {
+#new-list p {
   margin-left: 20px;
 }
 
@@ -290,7 +319,6 @@ input::-webkit-search-cancel-button{display:none;}
 
  .list-info p {
   color: #464646;
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 26px;
   font-weight: 500;
   margin-left: 32px;
@@ -316,7 +344,7 @@ input::-webkit-search-cancel-button{display:none;}
   height: 20px;
  }
 
- #add-task {
+ #new-task {
   background-color: #fff;
   width: 50px;
   height: 50px;
@@ -332,15 +360,15 @@ input::-webkit-search-cancel-button{display:none;}
   transition: background-color 0.15s;
  }
 
- #add-task:hover {
+ #new-task:hover {
   background-color: #f5f5f5;
  }
 
- #add-task .plus {
+ #new-task .plus {
   color: #1996f0;
  }
 
- #add-task .plus::before{
+ #new-task .plus::before{
   content: '';
   position: absolute;
   left: 50%;
@@ -352,7 +380,7 @@ input::-webkit-search-cancel-button{display:none;}
   border-radius: 4px;
 }
 
-#add-task .plus::after {
+#new-task .plus::after {
   content: '';
   position: absolute;
   left: 50%;
@@ -364,13 +392,13 @@ input::-webkit-search-cancel-button{display:none;}
   border-radius: 4px;
  }
 
-.detail-above {
+.detail-info {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   height: 80px;
-  border-bottom: #e6e6e6 1px solid;
 }
+
 #date-input {
   height: 46px;
   width: 46px;
@@ -400,44 +428,45 @@ input::-webkit-search-cancel-button{display:none;}
   visibility: hidden;
 }
 
-.detail-below {
+.remark {
   display: flex;
   justify-content: stretch;
   align-items: flex-start;
   padding-left: 15px;
   padding-right: 15px;
+  border-top: #e6e6e6 1px solid;
 }
 
 #task-detail {
   flex: 1;
+  box-sizing: border-box;
   border: white 1px solid;
   border-radius: 4px;
   margin-top: 12px;
+  padding: 5px;
   outline: none;
-  transition: border-color 0.15s;
-  font-family: Roboto;
   font-size: 15px;
   color: #6a6a82;
   min-height: 75px;
   resize: none;
+  overflow: hidden;
 }
 
 #task-detail:hover {
-  border: #e6e6e6 1px solid;
+  border-color: #e6e6e6;
 }
 
 #task-detail:focus {
-  border: #1996f0 1px solid;
+  border-color: #1996f0;
 }
 
-.r-section img {
+.remark img {
   height: 20px;
-  margin-top: 12px;
+  margin-top: 15px;
   margin-right: 10px;
 }
 
 .title-input{
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 16px;
   outline: none;
   border: none;
@@ -461,7 +490,6 @@ input::-webkit-search-cancel-button{display:none;}
 }
 
 #title-input{
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 16px;
   outline: none;
   border: none;
@@ -473,8 +501,36 @@ input::-webkit-search-cancel-button{display:none;}
   margin-left: 10px;
 }
 
+.timestamp {
+  height: 30px;
+  width: 110px;
+  line-height: 30px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid rgb(179, 179, 179);
+  padding-left: 6px;
+  cursor: pointer;
+}
+
+.timestamp>span {
+  color: #464646;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.timestamp:before {
+  content: '\2716';
+  position: absolute;
+  left: 115px;
+  line-height: 30px;
+}
+
+.timestamp:hover {
+  color: red;
+}
+
 #pop-button {
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 12px;
 }
 
@@ -487,7 +543,6 @@ input::-webkit-search-cancel-button{display:none;}
   margin-top: 15px;
   padding-left: 6px;
   outline: none;
-  font-family: Roboto;
   font-size: 16px;
 }
 
@@ -537,7 +592,6 @@ input::-webkit-search-cancel-button{display:none;}
 }
 
 .task-item input {
-  font-family: Roboto, sans-serif, SimHei;
   font-size: 16px;
   outline: none;
   border: none;
@@ -586,3 +640,15 @@ input::-webkit-search-cancel-button{display:none;}
   height: 25px;
   opacity: 1;
 }
+
+/* ===================================
+    2.3 任务信息样式-结束
+====================================== */
+
+/* ===================================
+    2. 页面主体样式-结束
+====================================== */
+
+
+
+
