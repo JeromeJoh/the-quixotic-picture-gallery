@@ -51,6 +51,22 @@ header input:focus {
   margin-left: 25px;
 }
 
+.circle {
+  width: 8px;
+  height: 8px;
+  background: #1996f0;
+  border-radius: 4px;
+  margin-right: -3px;
+}
+
+.rectangle {
+  width: 25px;
+  height: 6px;
+  border-radius: 4px;
+  background: #1996f0;
+  transform: rotate(315deg);
+}
+
 .logo p {
   margin-left: 10px;
   color: #4f4729;
@@ -113,6 +129,20 @@ nav {
 ====================================== */
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===================================
     2. 页面主体样式-开始
 ====================================== */
@@ -123,8 +153,6 @@ main {
   top: 51px;
   bottom: 0px;
 }
-
-
 
 /* ===================================
     2.1 列表集合样式-开始
@@ -143,6 +171,7 @@ main {
   height: 50px;
   width: 100%;
   border: none;
+  padding: 0 5px;
 }
 
 .l-section button:hover {
@@ -155,6 +184,11 @@ main {
   font-family: Roboto;
   font-size: 16px;
   text-align: left;
+}
+
+.current-list {
+  color: #1996f0;
+  font-weight: 700;
 }
 
 #list-display button:hover {
@@ -175,65 +209,6 @@ main {
   font-weight: 700;
   color: #1996f0;
 }
-
-/* ===================================
-    2.1 列表集合样式-结束
-====================================== */
-
-
-
-/* ===================================
-    2.2 任务集合样式-开始
-====================================== */
-
-.m-section {
-  flex: 5.5;
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-left-color: #e6e6e6;
-  position: relative;
-}
-
-
-/* ===================================
-    2.2 任务集合样式-结束
-====================================== */
-
-
-
-/* ===================================
-    2.3 任务信息样式-开始
-====================================== */
-
-.r-section {
-  position: relative;
-  border-left-width: 1px;
-  border-left-style: solid;
-  border-left-color: #e6e6e6;
-  flex: 4.5;
-}
-
-#todo-list {
-  color: white;
-}
-
-.circle {
-  width: 8px;
-  height: 8px;
-  background: #1996f0;
-  border-radius: 4px;
-  margin-right: -3px;
-}
-
-.rectangle {
-  width: 25px;
-  height: 6px;
-  border-radius: 4px;
-  background: #1996f0;
-  transform: rotate(315deg);
-}
-
-
 
 #new-list {
   display: flex;
@@ -310,226 +285,6 @@ main {
   border-radius: 4px;
  }
 
- .list-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 80px;
- }
-
- .list-info p {
-  color: #464646;
-  font-size: 26px;
-  font-weight: 500;
-  margin-left: 32px;
-  margin-bottom: 10px;
- }
-
- .list-info button {
-  background-color: white;
-  width: 40px;
-  height: 40px;
-  border-radius: 20px;
-  border: none;
-  margin-bottom: 10px;
-  margin-right: 25px;
- }
-
- .list-info button:hover {
-  background-color: #ededed;
- }
-
- .list-info button img {
-  margin-top: 4px;
-  height: 20px;
- }
-
- #new-task {
-  background-color: #fff;
-  width: 50px;
-  height: 50px;
-  border: none;
-  border-radius: 25px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  box-shadow:  0px 0px 8px rgb(185, 183, 183);
-  margin-right: 60px;
-  margin-bottom: 50px;
-  padding-left: 8px;
-  transition: background-color 0.15s;
- }
-
- #new-task:hover {
-  background-color: #f5f5f5;
- }
-
- #new-task .plus {
-  color: #1996f0;
- }
-
- #new-task .plus::before{
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 10px;
-  margin-left: -5.2px;
-  margin-top: -1px;
-  border-top: 1.5px solid;
-  border-radius: 4px;
-}
-
-#new-task .plus::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  height: 10px;
-  margin-left: -1px;
-  margin-top: -5px;
-  border-left: 1.5px solid;
-  border-radius: 4px;
- }
-
-.detail-info {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  height: 80px;
-}
-
-#date-input {
-  height: 46px;
-  width: 46px;
-  border-radius: 23px;
-  border: none;
-  outline: none;
-  margin-right: 25px;
-  margin-bottom: 4px;
-  transition: background-color 0.15s;
-}
-
-#date-input:hover {
-  background-color: #ededed;
-}
-
-#date-input[type="date"]::-webkit-calendar-picker-indicator {
-  margin-right: 12px;
-  width: 18px;
-  height: 18px;
-  border-radius: 9px;
-  background-color: #fff;
-  background-size: 100% 100%;
-  color: #666;
-}
-
-#date-input[type="date"]::-webkit-datetime-edit-fields-wrapper {
-  visibility: hidden;
-}
-
-.remark {
-  display: flex;
-  justify-content: stretch;
-  align-items: flex-start;
-  padding-left: 15px;
-  padding-right: 15px;
-  border-top: #e6e6e6 1px solid;
-}
-
-#task-detail {
-  flex: 1;
-  box-sizing: border-box;
-  border: white 1px solid;
-  border-radius: 4px;
-  margin-top: 12px;
-  padding: 5px;
-  outline: none;
-  font-size: 15px;
-  color: #6a6a82;
-  min-height: 75px;
-  resize: none;
-  overflow: hidden;
-}
-
-#task-detail:hover {
-  border-color: #e6e6e6;
-}
-
-#task-detail:focus {
-  border-color: #1996f0;
-}
-
-.remark img {
-  height: 20px;
-  margin-top: 15px;
-  margin-right: 10px;
-}
-
-.title-input{
-  font-size: 16px;
-  outline: none;
-  border: none;
-  border-bottom-style: solid;
-  border-bottom-width: 1px;
-  border-bottom-color: #b3b3b3;
-  width: 50%;
-  height: 50px;
-  padding-left: 10px;
-  padding-bottom: 0px;
-  transition: border-bottom-width, border-botton-color, 0.15s;
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
-
-.title-input:focus {
-  border-bottom-color: #1996f0;
-  border-bottom-width: 2px;
-}
-
-#title-input{
-  font-size: 16px;
-  outline: none;
-  border: none;
-  width: 80%;
-  height: 50px;
-  padding-left: 10px;
-  padding-bottom: 0px;
-  transition: border-bottom-width, border-botton-color, 0.15s;
-  margin-left: 10px;
-}
-
-.timestamp {
-  height: 30px;
-  width: 110px;
-  line-height: 30px;
-  margin-left: 20px;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  border: 1px solid rgb(179, 179, 179);
-  padding-left: 6px;
-  cursor: pointer;
-}
-
-.timestamp>span {
-  color: #464646;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.timestamp:before {
-  content: '\2716';
-  position: absolute;
-  left: 115px;
-  line-height: 30px;
-}
-
-.timestamp:hover {
-  color: red;
-}
-
 #pop-button {
   font-size: 12px;
 }
@@ -573,6 +328,266 @@ main {
   background-color: #e7e7e7;
 }
 
+/* ===================================
+    2.1 列表集合样式-结束
+====================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+    2.2 任务集合样式-开始
+====================================== */
+
+.m-section {
+  flex: 5.5;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #e6e6e6;
+  position: relative;
+}
+
+#todo-list {
+  color: white;
+}
+
+.list-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 80px;
+ }
+
+ .list-info p {
+  color: #464646;
+  font-size: 26px;
+  font-weight: 500;
+  margin-left: 32px;
+  margin-bottom: 10px;
+ }
+
+ .list-info button {
+  background-color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  margin-bottom: 10px;
+  margin-right: 25px;
+ }
+
+ .list-info button:hover {
+  background-color: #ededed;
+ }
+
+ .list-info button img {
+  margin-top: 4px;
+  height: 20px;
+ }
+
+ #new-task {
+  background-color: #fff;
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 25px;
+  position: absolute;
+  right: 30px;
+  bottom: 50px;
+  box-shadow:  0px 0px 8px rgb(185, 183, 183);
+  padding-left: 8px;
+  transition: background-color 0.15s;
+ }
+
+ #new-task:hover {
+  background-color: #f5f5f5;
+ }
+
+ #new-task .plus {
+  color: #1996f0;
+ }
+
+ #new-task .plus::before{
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 10px;
+  margin-left: -5.2px;
+  margin-top: -1px;
+  border-top: 1.5px solid;
+  border-radius: 4px;
+}
+
+#new-task .plus::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 10px;
+  margin-left: -1px;
+  margin-top: -5px;
+  border-left: 1.5px solid;
+  border-radius: 4px;
+ }
+
+
+/* ===================================
+    2.2 任务集合样式-结束
+====================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================
+    2.3 任务信息样式-开始
+====================================== */
+
+.r-section {
+  position: relative;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #e6e6e6;
+  flex: 4.5;
+}
+
+.detail-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 80px;
+}
+
+#title-input{
+  font-size: 16px;
+  outline: none;
+  border: none;
+  width: 80%;
+  height: 50px;
+  padding-left: 10px;
+  padding-bottom: 0px;
+  margin-left: 10px;
+}
+
+input[type="date"] {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  margin-right: 30px;
+  margin-bottom: 4px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+input[type="date"]:hover {
+  background-color: #ededed;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  margin-right: 12px;
+  width: 18px;
+  height: 18px;
+  border-radius: 9px;
+}
+
+input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+  display: none;
+}
+
+.remark {
+  display: flex;
+  justify-content: stretch;
+  align-items: flex-start;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-top: #e6e6e6 1px solid;
+}
+
+#task-detail {
+  flex: 1;
+  box-sizing: border-box;
+  border: white 1px solid;
+  border-radius: 4px;
+  margin-top: 12px;
+  padding: 5px;
+  outline: none;
+  font-size: 15px;
+  color: #6a6a82;
+  min-height: 75px;
+  resize: none;
+  overflow: hidden;
+}
+
+#task-detail:hover {
+  border-color: #e6e6e6;
+}
+
+#task-detail:focus {
+  border-color: #1996f0;
+}
+
+.remark img {
+  height: 20px;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+
+.timestamp {
+  height: 30px;
+  width: 110px;
+  line-height: 30px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 1px solid rgb(179, 179, 179);
+  padding-left: 6px;
+  cursor: pointer;
+  display: none;
+}
+
+.timestamp>span {
+  color: #464646;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.timestamp:before {
+  content: '\2716';
+  position: absolute;
+  left: 115px;
+  line-height: 30px;
+}
+
+.timestamp:hover {
+  color: red;
+}
+
 .task-item {
   display: flex;
   justify-content: center;
@@ -602,12 +617,11 @@ main {
   height: 50px;
   padding-left: 10px;
   padding-bottom: 0px;
-  transition: border-bottom-width, border-bottom-color, 0.15s;
+  transition: all, 0.15s;
 }
 
 .task-item input:focus {
-  border-bottom-width: 2px;
-  border-bottom-color: #1996f0;
+  border-bottom: 2px solid #1996f0;
 }
 
 
@@ -620,6 +634,7 @@ main {
   border-radius: 50%;
   border: #a5a5a5 1px solid;
   background-color: #fff;
+  flex-shrink: 0;
 }
 
 .delete-task:hover {
