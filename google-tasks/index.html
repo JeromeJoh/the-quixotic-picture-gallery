@@ -3,10 +3,13 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="JeromeJoh">
+  <meta name="author" content="JeromeJoh,jerome.yzhao@foxmail.com">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Google Tasks</title>
+
+  <link rel="dns-prefetch" href="">
+
   <link type="image/x-ico" rel="icon" href="images/logo.png">
   <link rel="stylesheet" href="style.css">
   <script src="main.js" defer></script>
@@ -16,6 +19,7 @@
 </head>
 
 <body>
+  <!-- S 导航栏 -->
   <header role="banner">
     <div class="logo">
       <div class="circle"></div>
@@ -25,7 +29,7 @@
     <nav>
       <div class="search">
         <img src="images/search.svg">
-        <input type="search" placeholder="Search" />
+        <input type="search" placeholder="Search">
       </div>
       <button class="add-to-taskbar" onclick="alert('安装 Google Tasks Desktop 应用')">
         <img src="images/download.svg">
@@ -36,45 +40,47 @@
       </button>
     </nav>
   </header>
+  <!-- E 导航栏 -->
 
+  <!-- S 内容区 -->
   <main role="main">
-    <section class="l-section">
-      <div id="new-list">
+    <section class="left-section">
+      <div id="newList">
         <button>
           <p>Lists</p>
-          <div class="plus"></div>
+          <span class="plus"></span>
         </button>
       </div>
-      <div id="pop-button"></div>
-      <div id="list-display"></div>
+      <div id="popUp"></div>
+      <div id="listDisplay"></div>
     </section>
+    <!-- 左侧任务列表区 -->
 
-    <section class="m-section">
+    <section class="middle-section">
       <div class="list-info">
-        <p>Inbox</p>
-        <button class="more-button">
-          <img src="images/more.svg">
-        </button>
+        <p></p>
+        <button><img src="images/more.svg"></button>
       </div>
-      <div id="todo-list">
-      </div>
-      <button id="new-task" onclick="addTask()">
-        <div class="plus"></div>
-      </button>
-    </section>
 
-    <section class="r-section">
-      <div class="detail-info">
-        <input id="title-input" type="search" readonly/>
-        <input id="date-input" type="date" />
+      <div id="todoList"></div>
+      <button id="new-task" onclick="addTask()"><span class="plus"></span></button>
+    </section>
+    <!-- 中间任务项区 -->
+
+    <section class="right-section">
+      <div class="detail">
+        <input id="titleInput" type="text">
+        <input id="dateInput" type="date">
       </div>
       <div class="timestamp""><span>2020-08-20</span></div>
       <div class="remark">
         <img src="images/text.svg">
-        <textarea id="task-detail" placeholder="add details" rows="1"></textarea>
+        <textarea id="taskDetail" placeholder="add details"></textarea>
       </div>
     </section>
+    <!-- 右侧任务信息区 -->
   </main>
+  <!-- E 内容区 -->
 </body>
 
 </html>

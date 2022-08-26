@@ -1,4 +1,6 @@
-// Model
+// ---------------------------------------------------Model
+let lists
+
 class Task {
   constructor(id, name, deadline, remark) {
     this.id = id
@@ -8,14 +10,13 @@ class Task {
   }
 }
 
-let lists;
-let saved = JSON.parse(localStorage.getItem('todo-lists'));
+// 清空保存的数据
+// localStorage.setItem('todo-lists', null)
 
-
-//读取先前数据或加载默认数据
+//读取保存的数据或加载默认数据
+const saved = JSON.parse(localStorage.getItem('todo-lists'))
 if (saved) {
   lists = saved
-  console.log('已读取本地存储数据')
 } else {
   lists = {
     Inbox: [new Task(1, '打扫卫生', '2022-06-27', 'remark1'),
@@ -25,10 +26,11 @@ if (saved) {
     new Task(22, 'Web Design 入门', '2022-06-28', 'remark22'),
     new Task(33, 'Vue / React', '2022-06-12', 'remark33')]
   }
-  console.log('首次使用加载默认数据')
 }
 
-let currentList = 'Inbox', currentTask = new Task()
+//初始化当前列表与任务项
+let currentList = Object.keys(lists)[0], currentTask = new Task()
+
 
 //创建新的任务列表
 const createList = (listName) => {
@@ -37,11 +39,11 @@ const createList = (listName) => {
   saveList()
 }
 
-//创建新的任务
-const creatTask = (name, deadline, remark) => {
+//创建新的任务项
+const createTask = (name, deadline, remark) => {
   const id = new Date().getTime()
-  todos.push(new Task(id, name, deadline, remark))
-  console.log('新的任务已创建')
+  lists[currentList].push(new Task(id, name, deadline, remark))
+  saveTask()
 }
 
 //保存当前任务项数据
@@ -52,7 +54,7 @@ const saveTask = () => {
   saveList()
 }
 
-//保存所有数据至内存
+//保存任务列表至内存
 const saveList = () => {
   localStorage.setItem('todo-lists', JSON.stringify(lists));
 }
@@ -60,12 +62,12 @@ const saveList = () => {
 
 
 
-// View
+// ---------------------------------------------------View
 
-//列表项渲染
+//任务列表渲染
 const listRender = () => {
   //清空所有任务列表
-  document.getElementById('list-display').innerHTML = ''
+  document.getElementById('listDisplay').innerHTML = ''
 
   //加载现有任务列表
   for (k in lists) {
@@ -75,78 +77,68 @@ const listRender = () => {
     } else {
       element.className = ''
     }
-
     element.draggable = 'true'
     element.innerHTML = `
     <img src="images/move.svg" class="item-move" style="height:20px">
     ${k}
     `
-    document.getElementById('list-display').appendChild(element)
+    document.getElementById('listDisplay').appendChild(element)
   }
 
-  //列表项聚焦事件
-  let taskLists = document.querySelectorAll('#list-display>button')
+  //列表项添加点击事件
+  let taskLists = document.querySelectorAll('#listDisplay>button')
   taskLists.forEach(list => {
     list.addEventListener('click', function () {
       currentList = this.innerText
-      listRender()
-      taskRender()
+      render()
     })
   })
 }
 
 //任务项渲染
 const taskRender = () => {
-  //获取当前任务列表名称
-  const listInfo = document.querySelector('.list-info>p')
-  listInfo.innerText = currentList
+  //修改当前任务列表名称
+  document.querySelector('.list-info>p').innerText = currentList
 
   //清空所有任务项
-  document.getElementById('todo-list').innerHTML = '';
+  document.getElementById('todoList').innerHTML = ''
 
   //加载当前列表中的所有任务项
   todos = lists[currentList]
   todos.forEach(todo => {
     const element = document.createElement('div');
-    element.className = 'task-item';
-    let htmlstr = `
-    <img src="images/move.svg" class="item-move" style="height:20px">
-    <input id=${todo.id} class="todo-item" type="search" value="${todo.name}">
+    element.className = 'task-item'
+    element.innerHTML = `
+    <img src="images/move.svg" class="item-sign">
+    <input id=${todo.id} type="text" value="${todo.name}">
     `
-    element.innerHTML = htmlstr;
 
-    const deleteButton = document.createElement('button');
-    deleteButton.onclick = deleteTask;
+    const deleteButton = document.createElement('button')
     deleteButton.innerHTML = `
     <img src='images/pairsign.svg' id='${todo.id}'>
     `
-    deleteButton.id = todo.id;
+    deleteButton.id = todo.id
     deleteButton.className = 'delete-task'
-    element.appendChild(deleteButton);
+    deleteButton.onclick = deleteTask
+    element.appendChild(deleteButton)
 
-
-    const todoList = document.getElementById('todo-list');
+    const todoList = document.getElementById('todoList');
     todoList.appendChild(element);
 
     element.children[1].onkeyup = function (e) {
-      document.getElementById('title-input').value = e.target.value
+      document.getElementById('titleInput').value = e.target.value
     }
 
-    element.children[1].onchange = function (e) {
-      currentTask.name = e.target.value
-      saveTask()
-    }
-
-    //判断是否为新添加的任务项
+    //新添加的任务项自动聚焦
     if (todo.id && todo.name == '') {
       element.children[1].focus()
     }
   })
 
-  //任务项聚焦事件
-  let tasks = document.querySelectorAll('.task-item')
+  //任务项添加聚焦事件
+  const tasks = document.querySelectorAll('.task-item')
   tasks.forEach(todo => {
-    todo.firstElementChild.nextElementSibling.addEventListener('focus', function () {
+    todo.children[1].addEventListener('focus', function () {
       _self = this
       currentTask = lists[currentList].find(
         function (obj) {
@@ -155,22 +147,35 @@ const taskRender = () => {
       )
       detailRender()
     })
-
+    todo.children[1].addEventListener('change', function (e) {
+      currentTask.name = e.target.value
+      saveTask()
+    })
   })
+  detailCleaner()
 }
 
 
-//任务详细信息渲染
+//任务信息渲染
 const detailRender = () => {
   //加载右侧详细任务信息
-  document.getElementById('title-input').value = currentTask.name
-  document.getElementById('date-input').value = currentTask.deadline
-  document.getElementById('task-detail').value = currentTask.remark
+  document.getElementById('titleInput').value = currentTask.name
+  document.getElementById('dateInput').value = currentTask.deadline
+  document.getElementById('taskDetail').value = currentTask.remark
   dateRender()
+}
+
+//清空任务信息
+const detailCleaner = () => {
+  document.getElementById('titleInput').value = ''
+  document.getElementById('dateInput').value = ''
+  document.getElementById('taskDetail').value = ''
+  document.querySelector('.timestamp').style.display = 'none'
 }
 
 //时间标签渲染
 const dateRender = () => {
+  //判断当前任务项是否设置时间
   if (currentTask.deadline === '') {
     timeStamp = document.querySelector('.timestamp')
     timeStamp.style.display = 'none'
@@ -179,95 +184,62 @@ const dateRender = () => {
     timeStamp.firstElementChild.innerText = currentTask.deadline
     timeStamp.style.display = 'block'
 
-    //清除任务时间设置
+    //任务时间添加点击删除事件
     timeStamp.addEventListener('click', function () {
       currentTask.deadline = ''
       timeStamp.style.display = 'none'
     })
-
   }
 }
 
-
-const initialRender = () => {
+const render = () => {
   listRender()
   taskRender()
 }
 
-initialRender()
+//初始化界面
+render()
 
 
-//Controller
-
-const addTask = () => {
-  const id = new Date().getTime();
-  currentTask = new Task(id, '', '', '')
-  lists[currentList].push(currentTask)
-  initialRender()
-  detailCleaner()
-}
-
-function finishTask(id) {
-  lists[currentList] = todos.filter(function (todo) {
-    if (todo.id === id) {
-      return false;
-    } else {
-      return true;
-    }
-  });
-}
-
-function deleteTask(event) {
-  const idToDelete = parseInt(event.target.id);
-  finishTask(idToDelete)
-  saveList()
-  taskRender()
-  detailCleaner()
-}
-
-
-//新增任务列表操作
-
-const newList = document.getElementById('new-list')
-let isVisibale = false;
+//新增任务列表弹出操作
+const newList = document.getElementById('newList')
+let isVisibale = false
 
 newList.addEventListener('click', function () {
   isVisibale = !isVisibale
   if (isVisibale) {
     const elementInput = document.createElement('input');
-    elementInput.id = 'list-name';
+    elementInput.id = 'listName'
     const elementSave = document.createElement('button');
-    const elementCancel = document.createElement('button');
     elementSave.innerText = 'Save';
     elementSave.id = 'save-button';
+    const elementCancel = document.createElement('button');
     elementCancel.innerText = 'Cancel';
     elementCancel.id = 'cancel-button';
-    const popButton = document.getElementById('pop-button');
-    popButton.append(elementInput, elementSave, elementCancel);
+    const popUp = document.getElementById('popUp');
+    popUp.append(elementInput, elementSave, elementCancel);
+    elementInput.focus()
 
     const saveButton = document.getElementById('save-button');
-    saveButton.onclick = function () {
-      const newList = document.getElementById('list-name');
+    saveButton.onclick = () => {
+      const newList = document.getElementById('listName');
       if (newList.value) { createList(newList.value) }
-      popButton.innerHTML = '';
-      initialRender()
-      console.log('新的任务列表已创建')
+      popUp.innerHTML = '';
+      render()
     }
 
     const cancelButton = document.getElementById('cancel-button');
     cancelButton.onclick = function () {
-      popButton.innerHTML = '';
+      popUp.innerHTML = '';
     }
   } else {
-    const popButton = document.getElementById('pop-button');
-    popButton.innerHTML = '';
+    popUp.innerHTML = '';
   }
 })
 
 
 //自适应高度文本框
-const autoInput = document.getElementById("task-detail");
-
+const autoInput = document.getElementById("taskDetail");
 autoInput.addEventListener("input", function () {
   let inputScrollTop = autoInput.scrollTop;
   let inputHeight = autoInput.offsetHeight;
@@ -278,35 +250,47 @@ autoInput.addEventListener("input", function () {
 
 
 
-//绑定任务信息改变事件
-const dateInput = document.getElementById('date-input')
+// ---------------------------------------------------Controller
+const addTask = () => {
+  const id = new Date().getTime();
+  currentTask = new Task(id, '', '', '')
+  lists[currentList].push(currentTask)
+  saveList()
+  render()
+}
+
+function finishTask(id) {
+  lists[currentList] = todos.filter(function (todo) {
+    return !(todo.id === id)
+  });
+  saveList()
+}
+
+function deleteTask(event) {
+  finishTask(parseInt(event.target.id))
+  taskRender()
+  detailCleaner()
+}
+
+
+
+//---------------------------------------------------Others
+const titleInput = document.getElementById('titleInput')
+titleInput.addEventListener('change', function (e) {
+  console.log(e.target.value)
+  currentTask.name = e.target.value
+  saveTask()
+})
+
+const dateInput = document.getElementById('dateInput')
 dateInput.addEventListener('change', function (e) {
   currentTask.deadline = e.target.value
   saveTask()
   dateRender()
 })
 
-
-const titleInput = document.getElementById('title-input')
-titleInput.addEventListener('change', function (e) {
-  currentTask.name = e.target.value
-  saveTask()
-})
-
-titleInput.addEventListener('keyup', function (e) {
-
-})
-
-const taskDetail = document.getElementById('task-detail')
+const taskDetail = document.getElementById('taskDetail')
 taskDetail.addEventListener('change', function (e) {
   currentTask.remark = e.target.value
   saveTask()
 })
-
-//清空任务详细信息
-const detailCleaner = () => {
-  document.getElementById('title-input').value = ''
-  document.getElementById('date-input').value = ''
-  document.getElementById('task-detail').value = ''
-  document.querySelector('.timestamp').style.display = 'none'
-}
