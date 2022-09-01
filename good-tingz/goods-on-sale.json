@@ -1,0 +1,12 @@
+[
+    { "id": 1,  "name": "Black Cape",          "stock": 79,  "quantity": 1,      "price": 799,   "type": "Accesories"} ,
+    { "id": 2,  "name": "Union Jack Bow Tie",  "stock": 110, "quantity": 1,      "price": 23,    "type": "Bow Ties"},
+    { "id": 3,  "name": "Belt Black Leather",  "stock": 25,  "quantity": 1,      "price": 150,   "type": "Belts"},
+    { "id": 4,  "name": "Brown Brogue Shoe",   "stock": 50,  "quantity": 1,      "price": 290,   "type": "Brogue Shoes"},
+    { "id": 5,  "name": "Pink Braces",         "stock": 46,  "quantity": 1,      "price": 115,   "type": "Braces"},
+    { "id": 6,  "name": "Dress Black",         "stock": 10,  "quantity": 1,      "price": 300,   "type": "Dresses"},
+    { "id": 7,  "name": "Baseball Cap",        "stock": 203, "quantity": 1,      "price": 12,    "type": "Caps"},
+    { "id": 8,  "name": "Rasta Winter Hat",    "stock": 110, "quantity": 1,      "price": 27,    "type": "Jamaican Style Hats"},
+    { "id": 9,  "name": "Green and Blue Clogs","stock": 77,  "quantity": 1,      "price": 54,    "type": "Crocs"}
+  ]
+  

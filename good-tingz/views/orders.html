@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orders</title>
+  <link type="image/x-ico" rel="icon" href="../my-avatar.ico">
+</head>
+
+<body class="bg-zinc-800 text-center" id="app">
+  <header class="inline-block mb-16 bg-white rounded-b-xl">
+    <nav class="flex space-x-4 bg-white rounded-b-xl">
+      <a href="../index.html" title="Home" class="p-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl">
+        <img src="../images/home.svg" alt="" class="h-8">
+      </a>
+      <a href="products.html" title="Products" class="px-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl">
+        <img src="../images/product.svg" alt="" class="h-10 relative -top-1">
+      </a>
+      <a href="#" title="Orders" class="px-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl">
+        <img src="../images/order.svg" alt="" class="h-8">
+      </a>
+      <a class="px-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl" 
+      @click="toggleSidebar" title="Cart">
+        <img src="../images/cart.svg" alt="" class="h-8">
+      </a>
+    </nav>
+  </header>
+
+  <main class="flex flex-col items-center text-white font-mono divide-y space-y-10">
+    <h1 class="text-5xl">Past Orders</h1>
+    <div class="flex flex-col">
+      <h3 class="text-4xl ">2022-06-28</h3>
+      <p>Black Cape *1</p>
+      <p>Union Jack Bow Tie *2</p>
+      <p>Total: $899.5</p>
+    </div>
+    <div class="flex flex-col">
+      <h3 class="text-4xl ">2022-07-09</h3>
+      <p>Dress Black *1</p>
+      <p>Pink Braces *1</p>
+      <p>Total: $599</p>
+    </div>
+    <div class="flex flex-col">
+      <h3 class="text-4xl ">2022-07-26</h3>
+      <p>Baseball Cap *1</p>
+      <p>Rasta Winter Hat *1</p>
+      <p>Total: $79.5</p>
+    </div>
+  </main>
+
+  <sidebar v-if="isVisible" :toggle="toggleSidebar" :cart="cart" :inventory="inventory" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/vue@3"></script>
+  <script src="../app.js"></script>
+</body>
+
+</html>
