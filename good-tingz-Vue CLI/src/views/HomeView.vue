@@ -1,49 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="author" content="JeromeJoh,jerome.yzhao@foxmail.com">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link type="image/x-ico" rel="icon" href="favicon.ico">
-  <title>Home</title>
-  <style>
-    [v-cloak] {
-      display: none;
-    }
-  </style>
-</head>
-
-<body style="overflow:-Scroll;overflow-x:hidden">
-  <!-- Global Container -->
-  <div class="flex flex-col items-center justify-start min-h-screen bg-zinc-800" id="app" v-cloak>
-
-    <!-- Header -->
-    <header role="banner" class="flex items-center justify-center mb-16
-    bg-white rounded-b-xl">
-      <nav class="flex space-x-4">
-        <a title="Home" class="p-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl">
-          <img src="./images/home.svg" alt="" class="h-8">
-        </a>
-        <a href="views/products.html" title="Products" class="px-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl">
-          <img src="./images/product.svg" alt="" class="h-10 relative -top-1">
-        </a>
-        <a href="views/orders.html" title="Orders" class="px-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl">
-          <img src="./images/order.svg" alt="" class="h-8">
-        </a>
-        <a class="px-6 py-4 hover:bg-zinc-300 duration-200 rounded-b-xl" @click="toggleSidebar" title="Cart">
-          <img src="./images/cart.svg" alt="" class="h-8">
-        </a>
-      </nav>
-    </header>
-
-    <!--Card Container-->
+<template>
+  <div class="flex flex-col items-center justify-start min-h-screen bg-zinc-800">
     <main role="main" class="flex flex-col bg-zinc-700 p-4 m-3 space-y-10 shadow-2xl rounded-3xl 
     md:flex-row md:space-x-10 md:space-y-0">
       <section class="flex flex-col items-center justify-center space-y-3">
         <div class="relative">
-          <img src="images/banner-2.jpg" alt="" class="h-96 object-cover rounded-xl duration-200 md:h-96">
+          <img src="@/assets/images/banner-2.jpg" alt="" class="h-96 object-cover rounded-xl duration-200 md:h-96">
           <h2 class="absolute top-1/2 left-0 text-5xl bg-white p-6 font-light rounded-r-full">
             G<span class="text-zinc-800 font-bold mx-2">∞</span>d Tingz
           </h2>
@@ -59,7 +20,7 @@
           md:flex-row md:space-y-0 md:space-x-10 font-mono">
 
           <!--Image-->
-          <img src="./images/black-cape.png" alt="" class="object-fit mx-auto duration-200 hover:scale-105 h-96
+          <img src="@/assets/images/black-cape.png" alt="" class="object-fit mx-auto duration-200 hover:scale-105 h-96
           md:h-60">
 
           <!--Content-->
@@ -92,7 +53,8 @@
                     text-white border-b-4 border-b-blue-700 rounded-lg
                     group-hover:border-t-4 group-hover:border-b-0 group-hover:bg-blue-700
                     group-hover:border-t-blue-700 group-hover:shadow-lg">
-                    <div class="px-4 py-2 bg-blue-500 font-sans rounded-lg duration-150">
+                    <div class="px-4 py-2 
+                     font-sans rounded-lg duration-150">
                       Add to cart
                     </div>
                   </button>
@@ -109,18 +71,17 @@
         </div>
       </section>
     </main>
-
-    <sidebar v-if="isVisible" :toggle="toggleSidebar" :cart="cart" :inventory="inventory" />
-
-    <footer role="contentinfo" class="text-gray-400 text-center w-screen font-light mt-8">
+    <footer class="text-gray-400 text-center w-full font-light mt-8">
       &copy; 2022 JeromeJoh. All rights reserved.
     </footer>
   </div>
+</template>
 
+<script>
+// @ is an alias to /src
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/vue@3"></script>
-  <script src="app.js"></script>
-</body>
-
-</html>
+export default {
+  name: 'HomeView',
+  props: ['inventory', 'addToCart']
+}
+</script>

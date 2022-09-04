@@ -20,7 +20,6 @@ const app = Vue.createApp({
     },
     addToCart(name, index) {
       if (!this.cart[name]) this.cart[name] = 0
-      console.log(this.inventory[index])
       this.cart[name] += this.inventory[index].quantity
       this.inventory[index].quantity = 1
     }
@@ -83,6 +82,7 @@ app.component('sidebar', {
       <button class="shadow-2xl px-4 py-2 rounded-full bg-zinc-800 text-white hover:bg-zinc-600">
         Checkout
       </button> 
+    </div>
   </aside>`
 })
 

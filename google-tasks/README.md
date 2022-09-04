@@ -1,6 +1,4 @@
 ### Checklist:
-- [x] Auto.io-前端代码规范
+- [x] Auto.io-Code Standards
+- [x] Plain Javascript
 - [x] MVC
-- [x] Class
-- [x] localStorage
-- [x] DOM Operations
