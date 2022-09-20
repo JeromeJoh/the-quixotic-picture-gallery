@@ -1,0 +1,32 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    @include fullscreen;
+    font-size: 62.5%;
+}
+
+body {
+    @include fullscreen;
+    font-family: $font-all;
+    font-weight: 400;
+    color: $color-white;
+    background-color: $color-black;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+    border: none;
+}

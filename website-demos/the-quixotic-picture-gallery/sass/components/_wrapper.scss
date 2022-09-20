@@ -1,0 +1,35 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 10rem;
+    height: 6rem;
+    cursor: pointer;
+
+    & button {
+        position: relative;
+        width: 10rem;
+        height: .6rem;
+        border: none;
+        border-radius: 1.5px;
+        color: white;
+        font-family: Ubuntu;
+        font-size: 2.5rem;
+        transition: all 0.15s;
+
+        & span {
+            position: absolute;
+            top: -35px;
+            width: 100%;
+            cursor: pointer;
+            display: none;
+        }
+    }
+
+    &:hover button {
+        transform: translateY(-5px);
+        & span {
+            display: block;
+        }
+    }
+}

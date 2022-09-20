@@ -1,0 +1,37 @@
+.acordion-box {
+    height: 85%;
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin-bottom: 3rem;
+    border-radius: 2px;
+    border: 1px solid $color-tertiary;
+    background-color: $color-white;
+    cursor: pointer;
+
+    &>img {
+        width: 200%;
+        height: 92%;
+        object-fit: cover;
+        transition: .5s;
+    }
+
+    &>span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 8%;
+        color: $color-black;
+        text-align: center;
+        font-size: 2rem;
+        letter-spacing: 1rem;
+    }
+
+    &:hover {
+        flex-basis: 40%;
+        
+        &>img {
+           @include imgCover;
+        }
+    }
+}

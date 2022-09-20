@@ -1,0 +1,22 @@
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/functions";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/shadow-box";
+@import "components/wrapper";
+@import "components/acordion-box";
+@import "components/ticket";
+
+@import "layout/header";
+@import "layout/footer";
+
+@import "pages/home";
+@import "pages/traditional";
+@import "pages/avant-garde";
+@import "pages/illustration";
+@import "pages/exhibitions";
