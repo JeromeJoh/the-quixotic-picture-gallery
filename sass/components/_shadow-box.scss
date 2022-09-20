@@ -1,0 +1,21 @@
+.shadow-box {
+    position: absolute;
+    top: 0;
+    right: -100%;
+    height: 100%;
+    width: 100%;
+    background-color: rgba($color-black, .5);
+    font-size: 1rem;
+    transition: right .5s;
+
+    & ul {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: .5rem;
+    }
+}
+

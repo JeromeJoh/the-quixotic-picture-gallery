@@ -1,0 +1,16 @@
+.section-avant-garde {
+
+    & img {
+        @include imgCover;
+    }
+
+    &__category {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4px;
+        position: absolute;
+        bottom: 5rem;
+        width: 100%;
+    }
+}

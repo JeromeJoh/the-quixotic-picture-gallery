@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="JeromeJoh, jerome.yzhao@foxmail.com">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage | The Quixotic Picture Gallery</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="sass/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Navigator-->
+    <header class="header" role="banner">
+        <div class="header__logo" onclick="switchPage(0)">
+            <a href="#">
+                <p><span>The</span> Quixotic</p>
+                <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Picture Gallery</p>
+            </a>
+        </div>
+        <ul class="header__nav">
+            <li onclick="switchPage(1)"><a href="#">Traditional</a></li>
+            <li onclick="switchPage(2)"><a href="#">Avant-Garde</a></li>
+            <li onclick="switchPage(3)"><a href="#">Illustration</a></li>
+            <li onclick="switchPage(4)"><a href="#">Exhibitions</a></li>
+        </ul>
+    </header>
+
+    <!--Home-->
+    <section class="section-home page0">
+        <video src="assets/videos/videoplayback.mp4" autoplay loop muted>
+            <!-- <source > -->
+        </video>
+        <div class="section-home__info">
+            <p>Aesthetic Enjoyment</p>
+            <button>Explore Now!</button>
+            <img src="assets/images/arrow.svg">
+        </div>
+    </section>
+
+    <!--Traditional Works-->
+    <section class="section-traditional page1" style="display: none;">
+        <div class="section-traditional__left-2">
+            <div class="section-traditional__left-2--top">
+                <img src="assets/images/2-1.jpg" loading="lazy">
+                <div class="shadow-box">
+                    <ul>
+                        <li>Published on July 18, 2018</li>
+                        <li>SAMSUNG, NX1000</li>
+                        <li>For prints and original paintings: www.artbystevej.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section-traditional__left-2--bottom">
+                <img src="assets/images/2-2.jpg" loading="lazy">
+                <div class="shadow-box">
+                    <ul>
+                        <li>Published on March 5, 2019</li>
+                        <li>SONY, ILCE-6000</li>
+                        <li>Free to use under the Unsplash License</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section-traditional__right-1">
+            <div>
+                <img src="assets/images/2-3.jpg" loading="lazy">
+                <div class="shadow-box">
+                    <ul>
+                        <li>Saint Cecilia of Rome, by François-Joseph Navez. </li>
+                        <li>Published on January 6, 2020</li>
+                        <li>Dual License: Public Domain & Unsplash License</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Avant Works-->
+    <section class="section-avant-garde page2" style="display: none;">
+        <div class="page2-image">
+            <img id="onDisplay" src="assets/images/classic.jpg" loading="lazy">
+            <nav class="section-avant-garde__category">
+                <div class="wrapper">
+                    <button onmouseover="switchImage('canva')"><span>Canvas</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('sketch')"><span>Sketch</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('classic')"><span>Classic</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('future')"><span>Future</span></button>
+                </div>
+
+                <div class="wrapper">
+                    <button onmouseover="switchImage('sculpture')"><span>Sculpture</span></button>
+                </div>
+            </nav>
+        </div>
+    </section>
+
+    <!--Illustration-->
+    <section class="section-anime page3" style="display: none;">
+        <div class="section-anime__shell">
+            <div class="acordion-box">
+                <img src="assets/images/cover-1.jpg" loading="lazy">
+                <span>Capri</span>
+            </div>
+            <div class="acordion-box">
+                <img src="assets/images/cover-2.jpg" loading="lazy">
+                <span>Aries</span>
+            </div>
+            <div class="acordion-box">
+                <img src="assets/images/cover-3.jpg" loading="lazy">
+                <span>Libra</span>
+            </div>
+            <div class="acordion-box">
+                <img src="assets/images/cover-4.jpg" loading="lazy">
+                <span>Pisces</span>
+            </div>
+        </div>
+    </section>
+
+    <!--Exhibitions-->
+    <section class="section-merch page4" style="display: none;">
+        <div class="section-merch__shell">
+            <div class="ticket">
+                <img src="assets/images/ticket1.jpg">
+                <p><b>The World of Stonehenge</b></p>
+                <p>Exhibition</p>
+                <p>17 Feb 2022 - 17 Jul 2022</p>
+            </div>
+            <div class="ticket">
+                <img src="assets/images/ticket2.jpg">
+                <p><b>Hieroglyphs</b></p>
+                <p>Exhibition</p>
+                <p>8 Mar 2022 - 17 Apr 2022</p>
+            </div>
+            <div class="ticket">
+                <img src="assets/images/ticket3.jpg">
+                <p><b>Archeology</b></p>
+                <p>Exhibition</p>
+                <p>1 May 2022 - 23 Sep 2022</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        //切换图片
+        const switchImage = filename => {
+            let url = 'assets/images/' + filename + '.jpg'
+            const imgOnDisplay = document.getElementById('onDisplay')
+            imgOnDisplay.setAttribute('src', url)
+        }
+
+        //切换页面
+        const switchPage = num => {
+            for (let i = 0; i < 5; i++) {
+                let currentPage = document.querySelector('.page' + i)
+                if (i == num) {
+                    currentPage.style.display = 'block'
+                } else {
+                    currentPage.style.display = 'none'
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+@mixin flex-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin fullscreen {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+@mixin absCenter {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin imgCover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
